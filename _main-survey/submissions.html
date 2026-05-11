@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Newcomers Submissions (Admin)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; padding: 24px; font-family: 'Montserrat', sans-serif; background: #f5f7fb; color: #1f2937; }
+    .wrap { max-width: 1200px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.08); overflow: hidden; }
+    .top { padding: 20px 24px; border-bottom: 1px solid #eceff5; display: flex; gap: 12px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    h1 { font-size: 20px; margin: 0; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    button, a.btn { border: 1px solid #d3d9e6; background: #fff; color: #111827; border-radius: 8px; padding: 10px 14px; font-size: 14px; cursor: pointer; text-decoration: none; }
+    button.primary { background: #192E31; color: #fff; border-color: #192E31; }
+    .meta { padding: 12px 24px; font-size: 13px; color: #4b5563; border-bottom: 1px solid #eceff5; }
+    .table-wrap { overflow: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 980px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #f0f2f7; vertical-align: top; font-size: 13px; }
+    th { background: #fafbff; position: sticky; top: 0; z-index: 1; }
+    .empty { padding: 36px 24px; color: #6b7280; }
+    .small { font-size: 12px; color: #6b7280; word-break: break-word; max-width: 340px; }
+    .source { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <h1>Survey Submissions (Admin View)</h1>
+      <div class="actions">
+        <button class="primary" id="refreshBtn">Refresh</button>
+        <a class="btn" href="admin.html">Back to Link Builder</a>
+      </div>
+    </div>
+    <div class="meta" id="meta">Loading…</div>
+    <div class="table-wrap" id="tableWrap"></div>
+  </div>
+
+  <script>
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatTs(ts) {
+      if (!ts) return '';
+      var d = new Date(ts);
+      return isNaN(d.getTime()) ? ts : d.toLocaleString();
+    }
+
+    function buildTable(rows) {
+      if (!rows.length) {
+        return '<div class="empty">No submissions yet. Submit the form once, then click Refresh.</div>';
+      }
+
+      var html = '<table><thead><tr>' +
+        '<th>#</th>' +
+        '<th>Timestamp</th>' +
+        '<th>Language</th>' +
+        '<th>Phone</th>' +
+        '<th>Email</th>' +
+        '<th>Source</th>' +
+        '<th>Referer</th>' +
+        '</tr></thead><tbody>';
+
+      for (var i = 0; i < rows.length; i++) {
+        var r = rows[i] || {};
+        html += '<tr>' +
+          '<td>' + (rows.length - i) + '</td>' +
+          '<td>' + escapeHtml(formatTs(r.ts)) + '</td>' +
+          '<td>' + escapeHtml(r.language || '') + '</td>' +
+          '<td>' + escapeHtml(r.phone || '') + '</td>' +
+          '<td>' + escapeHtml(r.email || '') + '</td>' +
+          '<td class="source">' + escapeHtml(r.source || '') + '</td>' +
+          '<td class="small">' + escapeHtml(r.referer || '') + '</td>' +
+          '</tr>';
+      }
+
+      html += '</tbody></table>';
+      return html;
+    }
+
+    async function loadSubmissions() {
+      var meta = document.getElementById('meta');
+      var tableWrap = document.getElementById('tableWrap');
+      meta.textContent = 'Loading…';
+
+      try {
+        var res = await fetch('../mock_submissions.jsonl?t=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+        var text = await res.text();
+        var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+
+        var rows = [];
+        for (var i = 0; i < lines.length; i++) {
+          try {
+            rows.push(JSON.parse(lines[i]));
+          } catch (e) {
+            // skip malformed lines
+          }
+        }
+
+        rows.sort(function (a, b) {
+          return new Date(a.ts || 0).getTime() - new Date(b.ts || 0).getTime();
+        });
+
+        tableWrap.innerHTML = buildTable(rows);
+        meta.textContent = 'Total submissions: ' + rows.length + ' • Last updated: ' + new Date().toLocaleTimeString();
+      } catch (err) {
+        tableWrap.innerHTML = '<div class="empty">Could not load mock_submissions.jsonl. Make sure the static server is running at port 8000 and the file exists.</div>';
+        meta.textContent = 'Load failed: ' + err.message;
+      }
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', loadSubmissions);
+    loadSubmissions();
+  </script>
+</body>
+</html>

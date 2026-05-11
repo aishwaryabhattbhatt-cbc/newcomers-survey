@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/_css/styles.css">
+	<title>Newcomers Admin Link Builder</title>
+	<style>
+		body { background: #f4f4f4; margin: 0; font-family: 'Montserrat', sans-serif; }
+		.admin-wrap { max-width: 760px; margin: 40px auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+		h1 { margin: 0 0 8px; font-size: 1.4rem; }
+		.subtitle { margin: 0 0 24px; color: #666; font-size: .95rem; }
+		label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 8px; color: #444; }
+		input, select { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #d8d8d8; border-radius: 8px; font-family: inherit; font-size: .95rem; }
+		.row { display: grid; grid-template-columns: 1fr 200px; gap: 12px; }
+		.btn { margin-top: 14px; background: #e2001a; color: #fff; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+		.btn:hover { background: #bf0016; }
+		.muted-btn { margin-left: 8px; background: #fff; color: #444; border: 1px solid #ccc; }
+		.result { margin-top: 22px; padding: 16px; border: 1px solid #eee; border-radius: 10px; background: #fafafa; }
+		.result p { margin: 0 0 10px; font-size: .9rem; color: #555; }
+		.url-box { word-break: break-all; background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 10px 12px; font-size: .9rem; }
+		.actions { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+		.qr { margin-top: 16px; }
+		.qr img { width: 220px; height: 220px; border: 1px solid #e5e5e5; border-radius: 8px; background: #fff; }
+		.note { margin-top: 18px; color: #7a7a7a; font-size: .82rem; }
+	</style>
+</head>
+<body>
+	<div class="admin-wrap">
+		<h1>Newcomers Source Link Builder</h1>
+		<p class="subtitle">Create one conference-tagged survey URL (English default). Respondents can switch language on the survey page, and source tracking will stay attached.</p>
+
+		<label for="sourceInput">Conference / Source</label>
+		<input id="sourceInput" type="text" placeholder="e.g. TorontoJobFair2026" autocomplete="off" />
+
+		<button class="btn" onclick="buildLink()">Generate Tagged URL + QR</button>
+
+		<div class="result" id="result" style="display:none;">
+			<p>Share this link:</p>
+			<div class="url-box" id="urlOut"></div>
+			<div class="actions">
+				<button class="btn" onclick="copyUrl()">Copy URL</button>
+				<button class="btn muted-btn" onclick="openUrl()">Open URL</button>
+				<a class="btn muted-btn" id="qrDownload" href="#" download="newcomers-source-qr.png">Download QR</a>
+			</div>
+			<div class="qr">
+				<img id="qrImg" alt="Generated QR Code" />
+			</div>
+		</div>
+
+		<p class="note">How it works: the generated URL adds <strong>?source=...</strong>. The survey JavaScript sends that source automatically on submit.</p>
+		<p class="note"><a href="submissions.html">View mock submissions table (Admin)</a></p>
+	</div>
+
+	<script>
+		var builtUrl = '';
+
+		function getBase() {
+			return window.location.origin + '/_main-survey/';
+		}
+
+		function buildLink() {
+			var source = (document.getElementById('sourceInput').value || '').trim();
+
+			if (!source) {
+				alert('Please enter a conference/source.');
+				return;
+			}
+
+			builtUrl = getBase() + 'index.html?source=' + encodeURIComponent(source);
+			document.getElementById('urlOut').textContent = builtUrl;
+
+			var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=' + encodeURIComponent(builtUrl);
+			var qrImg = document.getElementById('qrImg');
+			qrImg.src = qrUrl;
+
+			var dl = document.getElementById('qrDownload');
+			dl.href = qrUrl;
+			dl.setAttribute('download', 'newcomers-' + source.replace(/[^a-z0-9-_]/gi, '-') + '.png');
+
+			document.getElementById('result').style.display = 'block';
+		}
+
+		function copyUrl() {
+			if (!builtUrl) return;
+			navigator.clipboard.writeText(builtUrl);
+		}
+
+		function openUrl() {
+			if (!builtUrl) return;
+			var newWindow = window.open(builtUrl, '_blank');
+			if (!newWindow) {
+				window.location.href = builtUrl;
+			}
+		}
+	</script>
+</body>
+</html>
