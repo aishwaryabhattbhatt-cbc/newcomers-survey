@@ -57,7 +57,9 @@
 		var builtUrl = '';
 
 		function getBase() {
-			return window.location.origin + '/_main-survey/';
+			var path = window.location.pathname;
+			var dir = path.substring(0, path.lastIndexOf('/') + 1);
+			return window.location.origin + dir;
 		}
 
 		function buildLink() {
