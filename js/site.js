@@ -82,7 +82,7 @@ function applyTranslations(lang) {
     if (select) select.value = lang;
 
     if (logo) {
-        logo.src = lang === 'fr' ? '/_img/OTM-NA-CLR.svg' : '/_img/MTM-NC-CLR.svg';
+        logo.src = lang === 'fr' ? '../_img/OTM-NA-CLR.svg' : '../_img/MTM-NC-CLR.svg';
         logo.alt = lang === 'fr' ? 'OTM - Nouveau arrivants' : 'MTM Newcomers';
     }
 
@@ -162,7 +162,7 @@ function applyLegacyLanguagePack(pack) {
 
     if (logo) {
         var isFrench = (pack.langValue || '').toLowerCase() === 'français';
-        logo.src = isFrench ? '/_img/OTM-NA-CLR.svg' : '/_img/MTM-NC-CLR.svg';
+        logo.src = isFrench ? '../_img/OTM-NA-CLR.svg' : '../_img/MTM-NC-CLR.svg';
         logo.alt = isFrench ? 'OTM - Nouveau arrivants' : 'MTM Newcomers';
     }
 }
@@ -191,7 +191,7 @@ function loadLegacyLanguagePack(fileName) {
         return Promise.resolve(legacyPackCache[fileName]);
     }
 
-    var url = '/_main-survey/' + fileName;
+    var url = fileName;
     return fetch(url)
         .then(function (res) { return res.text(); })
         .then(function (html) {
@@ -247,7 +247,7 @@ function loadFaqFromLegacyPage(fileName) {
         return Promise.resolve(legacyFaqCache[fileName]);
     }
 
-    var url = '/_main-survey/' + fileName;
+    var url = fileName;
     return fetch(url)
         .then(function (res) { return res.text(); })
         .then(function (html) {
