@@ -115,6 +115,18 @@ function applyTranslations(lang) {
     if (success) success.textContent = t.success || '';
     if (faqTitle) faqTitle.textContent = t.faqTitle || '';
 
+    var heardLabel = document.getElementById('t-heard-label');
+    var heardSelect = document.getElementById('heardAbout');
+    if (heardLabel) heardLabel.textContent = t.heardLabel || 'How did you hear about the MTM Newcomers survey?';
+    if (heardSelect && t.heardOptions) {
+        var defaultOpt = heardSelect.querySelector('#t-heard-default');
+        if (defaultOpt) defaultOpt.textContent = t.heardDefault || '-- Select --';
+        for (var i = 0; i < t.heardOptions.length; i++) {
+            var opt = heardSelect.querySelector('#t-heard-' + (i + 1));
+            if (opt) opt.textContent = t.heardOptions[i];
+        }
+    }
+
     if (faqList) {
         renderFaqList(faqList, (t.faq && t.faq.length) ? t.faq : (window.SURVEY_I18N.en ? window.SURVEY_I18N.en.faq : []));
     }
@@ -358,12 +370,15 @@ function submitSurvey(token) {
     };
 
     var isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+    var heardAboutEl = document.getElementById('heardAbout');
+    var heardAboutVal = heardAboutEl ? heardAboutEl.value : '';
     var submitBase = isLocal ? 'http://127.0.0.1:8010/en/index' : '/en/index';
     xhttp.open('GET', submitBase + '?handler=NewcomersSurvey' +
         '&language=' + document.getElementById('lang').value +
         '&phone=' + encodeURIComponent(phoneVal) +
         '&email=' + encodeURIComponent(emailVal) +
         '&confirmEmail=' + encodeURIComponent(emailConfirmVal) +
+        '&heardAbout=' + encodeURIComponent(heardAboutVal) +
         '&website=' + encodeURIComponent(honeypotVal) +
         '&formLoadedAt=' + encodeURIComponent(loadedAtVal) +
         '&source=' + encodeURIComponent(source), true);
