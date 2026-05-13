@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/svg+xml" href="_img/favicon.svg">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="_css/styles.css">
+	<title>MTM नवागंतुक सर्वेक्षण</title>
+	</head>
+	<body>
+<header>
+</header>
+
+<div id="wrapper">
+
+<section id="container">
+	<div id="main_img">
+	<img class="header-image" src="_img/pi-top.jpg"/>
+		<img class="header-image-mobile" src="_img/pi-top-mobile.jpg"/>
+	</div>
+	<div id="header">
+		<div class="logo">
+			<img src="_img/MTM-NC-CLR.svg"/>
+		</div>
+		 <div class="menu-select">
+	        <select name="lang" onchange="pageLang(this.value)">
+	        	<!--Lang--><option value='#' selected>भाषा</option>
+				<!--English--><option value='en.html'>English</option>
+	            <!--french--><option value='fr.html'>Français</option>
+	            <!--Spanish--><option value='es.html'>Español</option>
+	            <!--Punjabi--><option value='pj.html'>ਪੰਜਾਬੀ</option>
+	            <!--Arabic--><option value='ar.html'>عربى</option>
+	            <!--Tagalog--><option value='ta.html'>Pilipino</option>
+	            <!--Mandarin--><option value='ma.html'>普通话</option>
+	            <!--Cantonese--><option value='ca.html'>廣東話</option>
+				<!--Swahili--><option value='sw.html'>kiswahili</option>
+				<!--Amharic--><option value='am.html'>አማርኛ</option>
+				<!--Hindi--><option value='hi.html'>हिन्दी</option>
+				<!--Ukrainian--><option value='uk.html'>YKpaπïHCbKa</option>        
+	        </select>
+        </div>
+	</div>
+	<div id="intro">
+		<h1>MTM नवागंतुक सर्वेक्षण</h1>
+		
+		<p>यदि आप पिछले 5 वर्षों के अंदर कनाडा आए हैं, तो कृपया नीचे दिए गए संपर्क के अपने पसंदीदा तरीके को भरकर MTM नवागंतुक सर्वेक्षण में भाग लें। फोन नंबर। सर्वेक्षण के अंत में आपको LEO प्लैटफॉर्म पर भेजा जाएगा जहां आपसे आपके संपर्क से जुड़ी थोड़ी-बहुत जानकारी देने का अनुरोध किया जाएगा।</p>
+
+		<div class="highlight">
+			<p>अगर आप चाहते हैं कि आपको $10 वाला प्रीपेड कार्ड मिले, तो आपको कनाडा में एक मान्य फोन नंबर और पता प्रदान करना होगा।</p>
+			
+		</div>
+
+		<div id="ncform">
+
+			<input type="hidden" id="lang" value="hindi" />
+
+			<div class="form-container">
+			
+				<div>
+				<input type="text" id="phone" placeholder="फोन नंबर">
+				</div>
+
+				<div>
+				<input type="email" id="email" placeholder="ईमेल">
+				</div>
+			
+			</div>
+
+			<div id="error">ERROR – You need to provide your phone number and email address in the fields.</div>
+
+			<div>
+			<button class="btn" onclick="submitSurvey()">सबमिट करें</button>
+			</div>
+
+			
+		</div>
+
+<div id="success">Thank you for providing your information! You now have registered to take part in the MTM Newcomers survey. You will be contacted soon.</div>
+		
+	</div>
+	<div id="faq">
+		<h2>अक्सर पूछे जाने वाले प्रश्न</h2>
+		<div>
+			<article>
+				<h3>यह किस प्रकार का सर्वेक्षण है?</h3>
+		                    <p>MTM नवागंतुक कनाडा में नवागंतुकों के लिए एकमात्र मीडिया और टेक्नोलॉजी सर्वेक्षण है। यह उन लोगों पर केंद्रित है जो पिछले 5 वर्षों के भीतर कनाडा आए हैं और यह समझने में मदद करते हैं कि नए लोग कैसे टीवी और वीडियो देखते हैं, संगीत सुनते हैं, दोस्तों और परिवार से जुड़ते हैं और उनकी खोज खबर लेते हैं। इसे 12 विभिन्न भाषाओं में आयोजित किया जाएगा: अंग्रेज़ी, फ्रेंच, टैगालोग, कैंटोनीज़, मंदारिन, पंजाबी, अरबी, स्पेनिश, हिंदी, स्वाहिली, यूक्रेनी और अम्हारिक।</p>
+			</article>
+			<article>
+				<h3>यह सर्वेक्षण कौन कर रहा है?</h3>
+		                    <p>MTM नवागंतुक मीडिया टेक्नोलॉजी मॉनिटर (MTM) का एक हिस्सा है। MTM कनाडा में उच्चतम गुणवत्ता वाला मीडिया अध्ययन है। पिछले 15 वर्षों में, MTM ने 300,000 से अधिक कनाडा के निवासियों के साथ बात की है, जिससे यह अपनी तरह का सबसे सटीक और व्यापक मीडिया टेक्नोलॉजी ट्रैकिंग सर्वेक्षण बन गया है।</p>
+			</article>
+			<article>
+				<h3>क्या मेरे जवाब गोपनीय रखे जाएंगे?</h3>
+		                    <p>是हां। MTM सीबीसी/रेडियो-कनाडा की संपत्ति है और आपके जवाब गोपनीय रखे जाएंगे। आपकी व्यक्तिगत जानकारी किसी अन्य के साथ साझा नहीं की जाएगी और इस सर्वेक्षण को समाप्त करने के बाद आपको न कुछ बेचा जाएगा और न ही फिर से संपर्क किया जाएगा। आपकी व्यक्तिगत जानकारी को बेचा या साझा नहीं किया जाएगा और आपका नाम सर्वेक्षण के परिणामों या भविष्य के किसी सर्वेक्षण में शामिल नहीं किया जाएगा।</p>
+			</article>
+			<article>
+				<h3>मैं इस सर्वेक्षण को कैसे पूरा करूंगा?</h3>
+		                    <p>यह एक ऑनलाइन सर्वेक्षण है। आप टेक्स्ट मैसेज या ईमेल के माध्यम से सर्वेक्षण पूरा करने के लिए लिंक प्राप्त करना चुन सकते हैं। जब आप हमें बता देते हैं कि आप किस प्रकार संपर्क करना चाहते हैं, तो 48 घंटों के भीतर आपको एक मैसेज प्राप्त होगा जिसमें आपसे सर्वेक्षण पूरा करने के लिए कहा जाएगा। इसके बाद, आप केवल लिंक पर क्लिक करें और अपनी चुनी हुई भाषा में ऑनलाइन सर्वेक्षण का जवाब दें। आप इसे अपने फोन, टैबलेट या कंप्यूटर पर पूरा कर सकते हैं।</p>
+			</article>
+			<article>
+				<h3>इसमें कितना समय लगेगा?</h3>
+		                    <p>इसमें 10 से 15 मिनट का समय लगता है।</p>
+			</article>
+			<article>
+				<h3>क्या इसके लिए कोई प्रोत्साहन दिया जाएगा?</h3>
+		                    <p>हां। सर्वेक्षण पूरा करने के बाद, आपको मास्टरकार्ड की ओर से $10 कीमत का एक ऑनलाइन गिफ्ट कार्ड प्राप्त होगा, जिसका उपयोग आप कहीं भी कर सकते हैं।</p>
+			</article>
+			<article>
+				<h3>मुझे इसमें भाग क्यों लेना चाहिए?</h3>
+		                    <p>सामान्य MTM सर्वेक्षण पिछले 15 वर्षों से हर वर्ष किया जा रहा है, लेकिन यह पहली बार है जब इस बड़े अध्ययन ने कनाडा में नवागंतुकों और मीडिया पर ध्यान केंद्रित किया है। इस सर्वेक्षण को पूरा करके, आप नवागंतुकों के मुद्दों को सामने लाने में मदद करने और नीति निर्माताओं और मीडिया कंपनियों द्वारा उनकी प्रथाओं को बेहतर ढंग से समझने में मदद करने में बहुत महत्वपूर्ण भूमिका निभा रहे हैं।</p>
+			</article>
+			<article>
+				<h3>डेटा का उपयोग किस कार्य के लिए किया जाएगा?</h3>
+		                    <p>MTM नवागंतुक सर्वेक्षण के निष्कर्षों का उपयोग सरकारी और निजी क्षेत्र के संगठन करेंगे। उदाहरण के लिए, इस सर्वेक्षण के निष्कर्षों से कनाडा सरकार को एक समूह के रूप में नवागंतुकों की अधिक सटीक तस्वीर और उनके द्वारा टेक्नोलॉजी के उपयोग, जैसे इंटरनेट, सेल फोन, केबल की सदस्यता, सोशल मीडिया और टीवी के उपयोग की जानकारी प्राप्त करने में मदद मिलेगी। यह बेहतर नीतियों को सूचित करेगा और सार्वजनिक स्वास्थ्य, आप्रवास और निपटान जैसे विषयों पर आपको और अन्य नवागंतुकों को जानकारी देने के तरीके में सुधार करेगा। यह सामाजिक सेवाओं और मीडिया कंपनियों को नवागंतुकों के लिए सामग्री बनाने, प्रासंगिक और सुविधाजनक समाचार और जानकारी साझा करने के लिए बेहतर रणनीति विकसित करने में भी मदद करेगा।</p>
+			</article>
+		</div>
+	</div>
+
+	<div id="footer">
+		<img style="margin-bottom:10px;" src="_img/mtm.svg"/>
+		<p>©2025 Newcomers is a product of the Media Technology Monitor. All Rights Reserved.</p>
+	</div>
+	
+	
+</section>
+
+</div>
+ <script src="/js/site.js"></script>
+</body>
+</html>

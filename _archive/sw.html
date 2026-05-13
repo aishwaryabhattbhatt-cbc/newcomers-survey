@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/svg+xml" href="_img/favicon.svg">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="_css/styles.css">
+	<title>Utafiti wa wageni kutoka MTM</title>
+	</head>
+	<body>
+<header>
+</header>
+
+<div id="wrapper">
+
+<section id="container">
+	<div id="main_img">
+	<img class="header-image" src="_img/pi-top.jpg"/>
+		<img class="header-image-mobile" src="_img/pi-top-mobile.jpg"/>
+	</div>
+	<div id="header">
+		<div class="logo">
+			<img src="_img/MTM-NC-CLR.svg"/>
+		</div>
+		 <div class="menu-select">
+	        <select name="lang" onchange="pageLang(this.value)">
+	        	<!--Lang--><option value='#' selected>Lugha</option>
+				<!--English--><option value='en.html'>English</option>
+	            <!--french--><option value='fr.html'>Français</option>
+	            <!--Spanish--><option value='es.html'>Español</option>
+	            <!--Punjabi--><option value='pj.html'>ਪੰਜਾਬੀ</option>
+	            <!--Arabic--><option value='ar.html'>عربى</option>
+	            <!--Tagalog--><option value='ta.html'>Pilipino</option>
+	            <!--Mandarin--><option value='ma.html'>普通话</option>
+	            <!--Cantonese--><option value='ca.html'>廣東話</option>
+				<!--Swahili--><option value='sw.html'>kiswahili</option>
+				<!--Amharic--><option value='am.html'>አማርኛ</option>
+				<!--Hindi--><option value='hi.html'>हिन्दी</option>
+				<!--Ukrainian--><option value='uk.html'>YKpaπïHCbKa</option>        
+	        </select>
+        </div>
+	</div>
+	<div id="intro">
+		<h1>Utafiti wa wageni kutoka MTM</h1>
+		
+		<p>Ikiwa umekaa nchini Kanada kwa kipindi cha miaka 5 iliyopita, tafadhali shiriki katika utafiti wa wageni kutoka MTM kwa kuweka njia unayopendelea ya mawasiliano hapa chini. Mwishoni mwa utafiti, utaelekezwa kwenye jukwaa la LEO ambapo utaombwa baadhi ya maelezo yako ya mawasiliano.</p>
+
+
+
+		<div class="highlight">
+			<p>Ili ustahiki kupokea kadi ya kulipia kabla ya dola 10, ni lazima upeane nambari ya simu na anwani zilizo halali nchini Kanada.</p>
+			
+		</div>
+
+		<div id="ncform">
+
+			<input type="hidden" id="lang" value="swahili" />
+
+			<div class="form-container">
+			
+				<div>
+				<input type="text" id="phone" placeholder="Nambari ya simu">
+				</div>
+
+				<div>
+				<input type="email" id="email" placeholder="Barua pepe">
+				</div>
+			
+			</div>
+
+			<div id="error">ERROR – You need to provide your phone number and email address in the fields.</div>
+
+			<div>
+			<button class="btn" onclick="submitSurvey()">Wasilisha</button>
+			</div>
+
+			
+		</div>
+
+		<div id="success">Thank you for providing your information! You now have registered to take part in the MTM Newcomers survey. You will be contacted soon.</div>
+	</div>
+	<div id="faq">
+		<h2>Maswali Yanayoulizwa Mara Nyingi</h2>
+		<div>
+			<article>
+				<h3>Utafiti huu ni wa nini?</h3>
+		                    <p>Wageni kutoka MTM ndio utafiti pekee wa vyombo vya habari na teknolojia kuhusu wageni nchini Kanada. Huangazia watu ambao wamekuja nchini Kanada ndani ya miaka 5 iliyopita na husaidia kuelewa jinsi wageni wanavyotazama televisheni na video, kusikiliza muziki, kuwasiliana na marafiki na familia, na kupata habari zao. Utafanywa katika lugha 12 tofauti: Kiingereza, Kifaransa, Kitagalogi, Kikantoni, Kimandarini, Kipunjabi, Kiarabu, Kihispania, Kihindi, Kiswahili, Kiukreni na Kiamhari.</p>
+			</article>
+			<article>
+				<h3>Ni nani anayefanya utafiti huu?</h3>
+		                    <p>Wageni kutoka MTM ni sehemu ya Media Technology Monitor (MTM). MTM ndio utafiti wa ubora wa juu zaidi wa vyombo vya habari nchini Kanada. Katika kipindi cha miaka 15 iliyopita, utafiti wa MTM umefanywa na zaidi ya watu 300,000 nchini Kanada, hatua ambayo inaufanya kuwa utafiti sahihi zaidi na wa kina wa aina yake wa vyombo vya habari.</p>
+			</article>
+			<article>
+				<h3>Je, majibu yangu yatabaki kuwa ya siri?</h3>
+		                    <p>Ndiyo. MTM ni mali ya CBC/Radio-Canada na majibu yako yatabaki kuwa ya siri. Maelezo yako ya binafsi hayatashirikiwa na mtu mwingine yeyote na hutauziwa bidhaa yoyote au kupigiwa simu tena baada ya kumaliza utafiti huu. Maelezo yako ya binafsi hayatauzwa wala kushirikiwa na jina lako halitahusishwa na matokeo ya utafiti wala tafiti zozote za baadaye.</p>
+			</article>
+			<article>
+				<h3>Ninawezaje kujaza utafiti huu?</h3>
+		                    <p>Huu ni utafiti wa mtandaoni. Unaweza kuchagua kupokea kiungo ili kujaza utafiti kupitia SMS au barua pepe. Mara tu unapotufahamisha jinsi ambavyo ungependa tuwasiliane nawe, ndani ya saa 48 utapokea ujumbe unaokuomba ujaze utafiti. Kisha, utabofya tu kiungo na ujibu utafiti wa mtandaoni katika lugha utakayochagua. Unaweza kuujaza kwa kutumia simu yako, kwenye kompyuta kibao au kompyuta.</p>
+			</article>
+			<article>
+				<h3>Utachukua muda gani?</h3>
+		                    <p>इसमें 10 से 15 मिनट का समय लगता है।</p>
+			</article>
+			<article>
+				<h3>Je, mtu atapewa kitu chochote cha motisha?</h3>
+		                    <p>Ndiyo. Baada ya kumaliza kujaza utafiti, utapokea kadi ya zawadi ya mtandaoni yenye thamani ya Dola 10 kutoka Mastercard, ambayo unaweza kutumia popote.</p>
+			</article>
+			<article>
+				<h3>Kwa nini nishiriki?</h3>
+		                    <p>Utafiti wa jumla wa MTM umekuwa ukifanywa kila mwaka kwa miaka 15, lakini hii ni mara ya kwanza kwa utafiti huu mkubwa kuwahi kulenga wageni na vyombo vya habari nchini Kanada. Kwa kujaza utafiti huu, unatimiza jukumu muhimu sana katika kusaidia kuwapa wageni sauti na kufanya mazoea yao kueleweka vyema na watunga sera na kampuni za vyombo vya habari.</p>
+			</article>
+			<article>
+				<h3>Maelezo hayo yatatumiwaje?</h3>
+		                    <p>Serikali pamoja na mashirika ya sekta ya kibinafsi yatatumia matokeo ya utafiti wa MTM Newcomer. Kwa mfano, matokeo ya utafiti huu yatasaidia serikali ya Kanada kuwa na picha sahihi zaidi ya wageni kama kikundi na matumizi yao ya teknolojia, kama vile upatikanaji wa intaneti, umiliki wa simu za mkononi, usajili wa huduma za kebo, mitandao ya kijamii na utumiaji wa televisheni. Hii itasaidia kubiniwa kwa na sera bora na kuboresha jinsi zinavyowasilisha habari kwako na kwa wageni wengine kuhusu mada kama vile afya ya umma, uhamiaji na makazi. Itasaidia pia huduma za kijamii na kampuni za vyombo vya habari kubuni mikakati bora ya kuunda maudhui na kushiriki habari na taarifa zinazohitajika na zinazofaa kwa wageni.</p>
+			</article>
+		</div>
+	</div>
+
+	<div id="footer">
+		<img style="margin-bottom:10px;" src="_img/mtm.svg"/>
+		<p>©2025 Newcomers is a product of the Media Technology Monitor. All Rights Reserved.</p>
+	</div>
+	
+</section>
+
+</div>
+ <script src="/js/site.js"></script>
+</body>
+</html>
