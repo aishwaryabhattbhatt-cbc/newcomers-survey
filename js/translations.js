@@ -106,6 +106,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'Numéro de téléphone',
     emailPlaceholder: 'Adresse courriel',
     confirmEmailPlaceholder: "Confirmer l'adresse courriel",
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: "Comment avez-vous entendu parler du sondage de l'OTM au sujet des nouveaux arrivants?",
     heardDefault: '-- Sélectionner --',
@@ -159,6 +162,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'Número de teléfono',
     emailPlaceholder: 'Correo electrónico',
     confirmEmailPlaceholder: 'Confirmar correo electrónico',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: '¿Cómo se enteró de la encuesta de MTM para recién llegados?',
     heardDefault: '-- Seleccionar --',
@@ -212,6 +218,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'ਫੋਨ ਨੰਬਰ',
     emailPlaceholder: 'ਈਮੇਲ ਖਾਤਾ',
     confirmEmailPlaceholder: 'ਈਮੇਲ ਖਾਤੇ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'ਤੁਹਾਨੂੰ MTM ਨਿਊਕਮਰ ਸਰਵੇ ਬਾਰੇ ਕਿਵੇਂ ਪਤਾ ਲੱਗਾ?',
     heardDefault: '-- ਚੁਣੋ --',
@@ -265,6 +274,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'رقم الهاتف',
     emailPlaceholder: 'البريد الإلكتروني',
     confirmEmailPlaceholder: 'تأكيد البريد الإلكتروني',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'كيف علمت باستطلاع MTM الخاص بالوافدين الجدد؟',
     heardDefault: '-- اختر --',
@@ -318,6 +330,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'Numero ng Telepono',
     emailPlaceholder: 'Email Address',
     confirmEmailPlaceholder: 'Kumpirmahin ang Email Address',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'Paano mo nalaman ang tungkol sa MTM Newcomers survey?',
     heardDefault: '-- Pumili --',
@@ -371,6 +386,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: '电话号码',
     emailPlaceholder: '电子邮件地址',
     confirmEmailPlaceholder: '确认电子邮件地址',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: '您是如何得知 MTM 新移民调查的？',
     heardDefault: '-- 选择 --',
@@ -424,6 +442,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: '電話號碼',
     emailPlaceholder: '電子郵件地址',
     confirmEmailPlaceholder: '確認電子郵件地址',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: '你係點樣聽到MTM新來者調查嘅?',
     heardDefault: '-- 選擇 --',
@@ -477,6 +498,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'Nambari ya simu',
     emailPlaceholder: 'Barua pepe',
     confirmEmailPlaceholder: 'Thibitisha barua pepe',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'Ulisikia vipi kuhusu utafiti wa Wapya Mjini wa MTM?',
     heardDefault: '-- Chagua --',
@@ -530,6 +554,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'ስልክ ቁጥር',
     emailPlaceholder: 'የኢሜይል አድራሻ',
     confirmEmailPlaceholder: 'የኢሜይል አድራሻዎን ያረጋግጡ',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'ስለ MTM አዲስ መጤዎች ጥናት እንዴት ሰሙ?',
     heardDefault: '-- ይምረጡ --',
@@ -574,7 +601,7 @@ window.SURVEY_I18N = {
   hi: {
     langValue: 'hindi',
     title: 'MTM नवागंतुक सर्वेक्षण',
-    intro: 'यदि आप पिछले 5 वर्षों के अंदर कनाडा आए हैं, तो कृपया नीचे दिए गए संपर्क के अपने पसंदीदा तरीके को भरकर MTM नवागंतुक सर्वेक्षण में भाग लें। फोन नंबर। सर्वेक्षण के अंत में आपको LEO प्लैटफॉर्म पर भेजा जाएगा जहां आपसे आपके संपर्क से जुड़ी थोड़ी-बहुत जानकारी देने का अनुरोध किया जाएगा।',
+    intro: 'यदि आप पिछले 5 वर्षों के अंदर कनाडा आए हैं, तो कृपया नीचे दिए गए संपर्क के अपने पसंदीदा तरीके को भरकर MTM नवागंतुक सर्वेक्षण में भाग लें। सर्वेक्षण के अंत में आपको LEO प्लैटफॉर्म पर भेजा जाएगा जहां आपसे आपके संपर्क से जुड़ी थोड़ी-बहुत जानकारी देने का अनुरोध किया जाएगा।',
     highlight: 'अगर आप चाहते हैं कि आपको $10 वाला प्रीपेड कार्ड मिले, तो आपको कनाडा में एक मान्य फोन नंबर और पता प्रदान करना होगा।',
 
     phoneLabel: 'फोन नंबर',
@@ -583,6 +610,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'फोन नंबर',
     emailPlaceholder: 'ईमेल',
     confirmEmailPlaceholder: 'ईमेल की पुष्टि करें',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'आपने एमटीएम न्यूकमर सर्वे के बारे में कैसे सुना?',
     heardDefault: '-- चुनें --',
@@ -636,6 +666,9 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'номер телефону',
     emailPlaceholder: 'адреса електронної пошти',
     confirmEmailPlaceholder: 'Підтвердіть адресу електронної пошти',
+    phonePlaceholderLong: 'e.g. 416-555-0123',
+    emailPlaceholderLong: 'e.g. name@example.com',
+    confirmEmailPlaceholderLong: 'e.g. name@example.com',
 
     heardLabel: 'Як ви дізналися про опитування MTM для новоприбулих?',
     heardDefault: '-- Оберіть --',
