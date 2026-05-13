@@ -372,6 +372,18 @@ window.SURVEY_I18N = {
     emailPlaceholder: '电子邮件地址',
     confirmEmailPlaceholder: '确认电子邮件地址',
 
+    heardLabel: '您是如何得知 MTM 新移民调查的？',
+    heardDefault: '-- 选择 --',
+    heardOptions: [
+      '难民 613',
+      '其他安置机构',
+      '社区活动（例如新移民日）',
+      '家人或朋友',
+      '社交媒体',
+      '其他',
+      '不知道'
+    ],
+
     error: '错误-您需要在输入框中提供您的电话号码和电子邮件地址',
     submit: '提交',
     success: '感谢您提供的信息！您现在已经完成了MTM 新移民调查问卷活动的注册。我们将尽快与您联系',
@@ -518,6 +530,18 @@ window.SURVEY_I18N = {
     phonePlaceholder: 'ስልክ ቁጥር',
     emailPlaceholder: 'የኢሜይል አድራሻ',
     confirmEmailPlaceholder: 'የኢሜይል አድራሻዎን ያረጋግጡ',
+
+    heardLabel: 'ስለ MTM አዲስ መጤዎች ጥናት እንዴት ሰሙ?',
+    heardDefault: '-- ይምረጡ --',
+    heardOptions: [
+      'የስደተኞች 613',
+      'ሌላ የሰፈራ ድርጅት',
+      'የማህበረሰብ ዝግጅት (ለምሳሌ የአዲስ መጤዎች ቀን)',
+      'ቤተሰብ ወይም ጓደኞች',
+      'ማህበራዊ ሚዲያ',
+      'ሌላ',
+      'አላውቅም'
+    ],
 
     error: 'ስህተት - በመስኮቹ ውስጥ የስልክ ቁጥርዎን እና የኢሜል አድራሻዎን ማቅረብ አለብዎት።',
     submit: 'አስረክብ',
